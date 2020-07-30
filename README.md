@@ -5,7 +5,7 @@ A tool for manipulating table of contents and writing them to pdf or djvu files.
 `tocify` is written in Python and requires `cpdf` for pdf files and `djvulibre` for djvu files.
 
 ```
-usage: tocify.py [-h] [--clean] [--offset n] toc file
+usage: python3 tocify.py [-h] [--clean] [--offset n] toc file
 
 A tool for writing outline to pdf or djvu files
 
@@ -15,8 +15,8 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  --clean     clean outline
-  --offset n  add offset
+  --clean     export a clean outline
+  --offset n  add offset to page numbers
 ```
 
 See the `example` folder for some examples of table of contents.
