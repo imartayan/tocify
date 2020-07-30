@@ -180,10 +180,10 @@ if ext == "pdf":
     toc_pdf = add_suffix(args.toc, "_pdf")
     export_tree_pdf(tree, toc_pdf)
     out = add_suffix(args.file, "_out")
-    cmd = f"cpdf -add-bookmarks {toc_pdf} {args.file} -o {out}"
+    cmd = f"""cpdf -add-bookmarks "{toc_pdf}" "{args.file}" -o "{out}" """
     run(cmd, shell=True)
 elif ext == "djvu":
     toc_djvu = add_suffix(args.toc, "_djvu")
     export_tree_djvu(tree, toc_djvu)
-    cmd = f'djvused -e "set-outline {toc_djvu}" -s {args.file}'
+    cmd = f"""djvused -e "set-outline '{toc_djvu}'" -s "{args.file}" """
     run(cmd, shell=True)
