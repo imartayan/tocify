@@ -4,8 +4,6 @@ A tool for manipulating table of contents and writing them to pdf or djvu files.
 
 `tocify` is written in Python and requires `cpdf` for pdf files and `djvulibre` for djvu files.
 
-At the moment, `tocify` does not accept filenames containing spaces.
-
 ```
 usage: tocify.py [-h] [--clean] [--offset n] toc file
 
