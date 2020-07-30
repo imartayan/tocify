@@ -3,7 +3,7 @@
 from argparse import ArgumentParser
 from subprocess import run
 
-parser = ArgumentParser(description="A tool for writing outline to pdf and djvu files.")
+parser = ArgumentParser(description="A tool for writing outline to pdf or djvu files")
 parser.add_argument("toc", help="table of contents")
 parser.add_argument("file", help="pdf or djvu file")
 parser.add_argument("--clean", help="clean outline", action="store_true")
