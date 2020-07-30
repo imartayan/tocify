@@ -32,18 +32,23 @@ class Tree:
         return node
 
 
-def clean_dots(s, lim=4):
-    num = 0
+def clean_line(l):
+    num_dots = 0
+    num_space = 0
     res = ""
-    for c in s:
+    for c in l:
         if c == ".":
-            num += 1
-        elif num < lim:
-            res += "." * num + c
-            num = 0
+            num_dots += 1
+        elif c == " ":
+            num_space += 1
         else:
-            res += " " + c
-            num = 0
+            if num_dots <= 3:
+                res += "." * num_dots
+            if num_space >= 1:
+                res += " "
+            res += c
+            num_dots = 0
+            num_space = 0
     return res
 
 
@@ -73,7 +78,7 @@ def create_tree(toc, offset=0):
     last_depth = -1
     with open(toc, "r") as f:
         for l in f:
-            s = clean_dots(l)
+            s = clean_line(l)
             depth = count_indent(s)
             title, page = get_title_page(s)
             page += offset
