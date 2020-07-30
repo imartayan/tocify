@@ -7,7 +7,7 @@ A tool for manipulating table of contents and writing them to pdf or djvu files.
 ```
 usage: tocify.py [-h] [--clean] [--offset n] toc file
 
-A tool for writing outline.
+A tool for writing outline to pdf or djvu files
 
 positional arguments:
   toc         table of contents
