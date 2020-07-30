@@ -1,13 +1,13 @@
-#!/usr/bin/python3
-
 from argparse import ArgumentParser
 from subprocess import run
 
 parser = ArgumentParser(description="A tool for writing outline to pdf or djvu files")
 parser.add_argument("toc", help="table of contents")
 parser.add_argument("file", help="pdf or djvu file")
-parser.add_argument("--clean", help="clean outline", action="store_true")
-parser.add_argument("--offset", metavar="n", help="add offset", default=0, type=int)
+parser.add_argument("--clean", help="export a clean outline", action="store_true")
+parser.add_argument(
+    "--offset", metavar="n", help="add offset to page numbers", default=0, type=int
+)
 args = parser.parse_args()
 
 
