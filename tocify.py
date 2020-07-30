@@ -78,9 +78,9 @@ def create_tree(toc, offset=0):
     last_depth = -1
     with open(toc, "r") as f:
         for l in f:
-            s = clean_line(l)
-            depth = count_indent(s)
-            title, page = get_title_page(s)
+            depth = count_indent(l)
+            clean = clean_line(l)
+            title, page = get_title_page(clean)
             page += offset
             node = last_node
             while depth <= last_depth:
